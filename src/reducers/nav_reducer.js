@@ -1,9 +1,18 @@
-import { TOGGLE_NAVMENU } from '../actions/index';
+import { TOGGLE_NAVMENU, TOGGLE_LOGIN_FORM } from '../actions/index';
 
-export default function navMenuToggle(state = false, action) {
+export function navMenuToggle(state = false, action) {
     if (action.type === TOGGLE_NAVMENU) {
         return action.payload;
     } else {
         return state;
     }
 }
+
+export function loginFormToggle(state = false, action) {
+    if (action.type === TOGGLE_LOGIN_FORM) {
+        return action.payload;
+    }
+    return state;
+}
+
+export default {navMenuToggle, loginFormToggle};

@@ -7,9 +7,9 @@ import SiteNav from './containers/navbar/sitenav';
 import NavMenu from './containers/navbar/navmenu';
 import Home from './containers/pages/home';
 
-import { faBars, faTimesCircle, faMap, faUser, faPlus, faMousePointer } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimesCircle, faMap, faUser, faPlus, faDragon } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faBars, faTimesCircle, faMap, faUser, faPlus, faMousePointer);
+library.add(faBars, faTimesCircle, faMap, faUser, faPlus, faDragon);
 
 class App extends Component {
     render() {

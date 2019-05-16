@@ -20,8 +20,9 @@ class SiteNav extends Component {
                 <NavToggle>
                     <NavButton
                         className="burger"
-                        icon={isNavToggled ? 'times-circle' : 'bars'}
-                        onClick={e => this.burgerToggle()}
+                        style={{display: isNavToggled ? 'none' : 'initial'}}
+                        icon='bars'
+                        onClick={() => this.burgerToggle()}
                         size="2x"
                         fixedWidth
                     />

@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import NavReducer from './nav_reducer';
+import {navMenuToggle, loginFormToggle} from './nav_reducer';
 
 const rootReducer = combineReducers({
-    isNavToggled: NavReducer
+    isNavToggled: navMenuToggle,
+    isFormToggled: loginFormToggle
 });
 
 export default rootReducer;
