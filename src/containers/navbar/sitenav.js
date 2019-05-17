@@ -26,7 +26,7 @@ class SiteNav extends Component {
                         size="2x"
                         fixedWidth
                     />
-                    <h3>KIFFEN</h3>
+                    <h3 style={{display: isNavToggled ? 'none' : 'initial'}}>KIFFEN</h3>
                 </NavToggle>
                 <NavActions>
                     <NavButton icon="map" fixedWidth />

@@ -62,6 +62,7 @@ const PageContainer = styled.div`
     align-items: center;
     justify-content: flex-start;
     color: #C5C6C7;
+    text-align: center;
 `;
 
 const HomeHeader = styled.p`
@@ -88,7 +89,6 @@ const CallToAction = styled.div`
     font-size: 1em;
     font-weight: bold;
     letter-spacing: 0.1em;
-    text-align: center;
     :hover {
         color: #fff;
         cursor: pointer;
