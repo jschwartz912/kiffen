@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import ReactSignupLoginComponent from 'react-signup-login-component';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 import styled from 'styled-components';
-import BrandColors from '../../assets/js/colors';
 
 import fire from '../../fire';
 
@@ -14,75 +13,67 @@ class LoginForm extends Component {
     }
         
     render() {
-        const FormStyles = {
-            mainWrapper: { backgroundColor: BrandColors.get('DARK_GRAY'), border: `2px solid ${BrandColors.get('BREEN')}` },
-            mainTitle: { color: 'white' },
-            flipper: { transition: '0.1s' },
-            signup: {
-            //   wrapper: { backgroundColor: 'yellow' },
-            //   inputWrapper: { backgroundColor: 'AliceBlue' },
-            //   buttonsWrapper: { backgroundColor: 'Aqua' },
-            //   input: { backgroundColor: 'LavenderBlush' },
-            //   recoverPassword: {},
-            //   button: { backgroundColor: 'LightCoral' },
-            },
-            login: {
-            //   wrapper: { backgroundColor: 'yellow' },
-            //   inputWrapper: { backgroundColor: 'AliceBlue' },
-            //   buttonsWrapper: { backgroundColor: 'Aqua' },
-            //   input: { backgroundColor: 'LavenderBlush' },
-            //   recoverPasswordWrapper: { backgroundColor: 'MediumBlue' },
-            //   recoverPasswordButton: { backgroundColor: 'OldLace ' },
-            //   button: { backgroundColor: 'LightCoral' },
-            },
-            recoverPassword: {
-            //   wrapper: { backgroundColor: 'yellow' },
-            //   inputWrapper: { backgroundColor: 'AliceBlue' },
-            //   buttonsWrapper: { backgroundColor: 'Aqua' },
-            //   input: { backgroundColor: 'LavenderBlush' },
-            //   button: { backgroundColor: 'LightCoral' },
-            },
-        };
-        
         return (
-            <FormContainer>
-                <ReactSignupLoginComponent
-                    title={this.state.page}
-                    styles={FormStyles}
-                    handleSignup={this.signupWasClickedCallback}
-                    handleLogin={this.loginWasClickedCallback}
-                    handleRecoverPassword={this.recoverPasswordWasClickedCallback}
-                    submitLoginCustomLabel="Login"
-                    {...this.props} 
-                />
-            </FormContainer>
+            // <FormContainer>
+                <FormContainer>
+                    <MDBRow>
+                        <MDBCol md="6">
+                            <form onSubmit={(e) => this.loginWasClickedCallback(e)}>
+                                <p className="h5 text-center mb-4">Sign in</p>
+                                <div className="grey-text">
+                                <MDBInput
+                                    label="Type your email"
+                                    icon="envelope"
+                                    group
+                                    type="email"
+                                    validate
+                                    error="wrong"
+                                    success="right"
+                                />
+                                <MDBInput
+                                    label="Type your password"
+                                    icon="lock"
+                                    group
+                                    type="password"
+                                    validate
+                                />
+                                </div>
+                                <div className="text-center">
+                                <MDBBtn type="submit">Login</MDBBtn>
+                                </div>
+                            </form>
+                        </MDBCol>
+                    </MDBRow>
+                </FormContainer>
+            // </FormContainer>
         );
     }
 
-    signupWasClickedCallback = (data) => {
-        console.log(data);
-        alert('Signup callback, see log on the console to see the data.');
-    };
-
-    loginWasClickedCallback = (data) => {
-        console.log(data);
+    loginWasClickedCallback = (e) => {
+        e.preventDefault();
+        
+        console.log('LOGIN');
         // alert('Login callback, see log on the console to see the data.');
-        const {username, password} = data;
-        console.log(username);
-        console.log(password);
+        // const {username, password} = data;
+        // console.log(username);
+        // console.log(password);
 
-        fire.database().ref('messages').push( username );
+        // fire.database().ref('messages').push( 'TEST' );
     };
     
-    recoverPasswordWasClickedCallback = (data) => {
-        console.log(data);
-        alert('Recover password callback, see log on the console to see the data.');
-    };
 }
 
-const FormContainer = styled.div`
-    position: relative;
-    z-index: 10;
+const FormContainer = styled(MDBContainer)`
+
+    .row {
+        justify-content: center;
+    }
+
+    .form-group {
+        width: 100%;
+        text-align: left;
+
+    }
 `;
 
 export default LoginForm;

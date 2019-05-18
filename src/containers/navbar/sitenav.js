@@ -26,7 +26,7 @@ class SiteNav extends Component {
                         size="2x"
                         fixedWidth
                     />
-                    <h3 style={{display: isNavToggled ? 'none' : 'initial'}}>KIFFEN</h3>
+                    <h3 style={{display: isNavToggled ? 'none' : 'initial'}}>Master Rebate</h3>
                 </NavToggle>
                 <NavActions>
                     <NavButton icon="map" fixedWidth />
@@ -54,7 +54,6 @@ const Navbar = styled.nav`
 const NavToggle = styled.div`
     h3 {
         display: inline-block;
-        vertical-align: super;
     }
 
     .burger {

@@ -13,7 +13,7 @@ class NavMenu extends Component {
         return (
             <MenuContainer style={{ display: isNavToggled ? 'inline-block' : 'none' }}>
                 <MenuHeader>
-                    <h3>KIFFEN</h3>
+                    <h3>Master Rebate</h3>
                     <NavButton 
                         className='closeBtn'
                         icon='times-circle'                

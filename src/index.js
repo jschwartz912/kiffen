@@ -4,10 +4,16 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
 
+// Must come before App import
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+// import 'mdbreact/dist/css/mdb.css';
+import "./assets/scss/mdb.scss"
+import './index.css';
+
 import App from './App';
 import reducers from './reducers';
 
-import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
